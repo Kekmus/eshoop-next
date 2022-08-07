@@ -1,0 +1,16 @@
+.dropdownToggle {
+  width: 70px;
+  height: 70px;
+  background-color: transparent;
+}
+
+.dropdownToggle__img::after {
+  content: '\d7';
+  font-size: 17px;
+  color: var(--white-color)
+}
+
+.dropdownToggle__text {
+  color: var(--white-color);
+  font-size: 12px;
+}

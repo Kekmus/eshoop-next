@@ -1,0 +1,18 @@
+.circle {
+  display: inline-flex;
+  background-color: var(--accent-color);
+  color: var(--white-color);
+  border-radius: 50%;
+  position: relative;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.circle__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+}

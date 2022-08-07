@@ -1,0 +1,17 @@
+.logo {
+  height: 100%;
+  text-transform: uppercase;
+  color: var(--white-color);
+}
+
+.header {
+  background-color: var(--dark-color);
+  padding: 15px 0 15px 0;
+}
+
+.header__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}

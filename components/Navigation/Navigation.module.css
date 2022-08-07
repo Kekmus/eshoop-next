@@ -1,0 +1,14 @@
+.navigation {
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.navigation__link {
+  color: var(--text-color);
+}
+
+.navigation__active {
+  color: var(--accent-color);
+}

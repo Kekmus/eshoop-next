@@ -1,0 +1,29 @@
+.myInput {
+  padding: 10px 22px;
+  font-size: 16px;
+  height: 40px;
+  width: 430px;
+  background-color: var(--white-color);
+  color: var(--text-color);
+  border-radius: 20px 0 0 20px;
+  border-color: var(--input-border-color);
+}
+
+.noBorders {
+  border: none;
+}
+
+.myInput::placeholder {
+  color: var(--text-color)
+}
+
+.search__btn {
+  background-color: var(--accent-color);
+  padding: 10px 22px;
+  border: none;
+  font-size: 16px;
+  height: 40px;
+  width: 120px;
+  color: var(--white-color);
+  border-radius: 0 20px 20px 0;
+}
