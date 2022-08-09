@@ -2,23 +2,24 @@ import style from "./ProductsSection.module.css";
 import ProductCard from "../ProductCard/ProductCard";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useMemo } from "react";
-import { getProducts } from "../../store/productsSlice";
+import { getProducts } from "../../features/productsSlice";
+import { useRouter } from "next/router";
 
 const ProductsSection = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getProducts());
-  }, [dispatch]);
+  }, []);
 
-  const products = useSelector((state) => state.products.products);
-  const currentPage = useSelector((state) =>
-    state.products.currentPage.toLowerCase()
-  );
+  const router = useRouter();
+
   const searchQuery = useSelector((state) => state.products.searchQuery);
+  const products = useSelector((state) => state.products.products);
+  const currentPage = router.pathname.slice(1);
 
   const sortedProducts = useMemo(() => {
     switch (currentPage) {
-      case "home":
+      case "":
         return products;
       case "clothing":
         return [...products].filter((a) => {

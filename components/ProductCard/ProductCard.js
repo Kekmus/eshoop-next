@@ -6,7 +6,7 @@ import { IconContext } from "react-icons";
 import { MdFavoriteBorder } from "react-icons/md";
 import { FaEye } from "react-icons/fa";
 import { useDispatch } from "react-redux"
-import { addToFavorites, addToCart } from "../../store/productsSlice"
+import { addToFavorites, addToCart } from "../../features/productsSlice"
 
 const ProductCard = ({ category, name, price, image, rating, id }) => {
   const dispatch = useDispatch()

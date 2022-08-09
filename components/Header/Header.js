@@ -6,7 +6,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai"
 import { IconContext } from "react-icons";
 import { MdFavoriteBorder } from "react-icons/md";
 import { useSelector, useDispatch } from "react-redux"
-import { setSearchQuery } from "../../store/productsSlice"
+import { setSearchQuery } from "../../features/productsSlice"
 
 const Header = () => {
   const favoritesLength = useSelector(state => state.products.favorites.length)

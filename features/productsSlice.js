@@ -7,7 +7,6 @@ const initialState = {
   products: [],
   productsIsLoading: null,
   errorLoading: null,
-  currentPage: "Home",
   searchQuery: "",
 };
 
@@ -35,9 +34,6 @@ const productsSlice = createSlice({
     setSearchQuery: (state, action) => {
       state.searchQuery = action.payload;
     },
-    setCurrentPage: (state, action) => {
-      state.currentPage = action.payload;
-    },
   },
   extraReducers: {
     [getProducts.pending]: (state) => {
@@ -54,6 +50,6 @@ const productsSlice = createSlice({
   },
 });
 
-export const { addToFavorites, addToCart, setProducts, setSearchQuery, setCurrentPage } =
+export const { addToFavorites, addToCart, setProducts, setSearchQuery } =
   productsSlice.actions;
 export default productsSlice.reducer;
