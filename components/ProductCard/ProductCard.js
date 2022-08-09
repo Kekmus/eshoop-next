@@ -5,11 +5,11 @@ import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import { IconContext } from "react-icons";
 import { MdFavoriteBorder } from "react-icons/md";
 import { FaEye } from "react-icons/fa";
-import { useDispatch } from "react-redux"
-import { addToFavorites, addToCart } from "../../features/productsSlice"
+import { useDispatch } from "react-redux";
+import { addToFavorites, addToCart } from "../../features/productsSlice";
 
 const ProductCard = ({ category, name, price, image, rating, id }) => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const fillStarIcon = (
     <IconContext.Provider value={{ color: "#D10024", size: "15px" }}>
@@ -33,9 +33,9 @@ const ProductCard = ({ category, name, price, image, rating, id }) => {
     <IconContext.Provider value={{ color: "#15161D", size: "30px" }}>
       <MdFavoriteBorder
         className={style.icon}
-        onClick={(e) => {dispatch(
-          addToFavorites(id)
-        )}}
+        onClick={(e) => {
+          dispatch(addToFavorites(id));
+        }}
       />
     </IconContext.Provider>
   );
@@ -50,14 +50,16 @@ const ProductCard = ({ category, name, price, image, rating, id }) => {
 
   return (
     <div className={style.productCard__wrapper}>
-      <Image
-        src={image}
-        width="345px"
-        height="345px"
-        alt="product 1"
-        objectFit="contain"
-        objectPosition="center"
-      ></Image>
+      <div>
+        <Image
+          src={image}
+          width="350px"
+          height="350px"
+          alt={`product ${id}`}
+          objectFit="contain"
+          layout="fixed"
+        />
+      </div>
       <div className={style.productCard__body}>
         <p className={style.product__category}>{category}</p>
         <h3 className={style.product__name}>{name}</h3>
@@ -67,9 +69,9 @@ const ProductCard = ({ category, name, price, image, rating, id }) => {
           {favoriteIcon}
           <MyButton
             text="Add To Card"
-            handleClick={(e) => {dispatch(
-              addToCart(id)
-            )}}
+            handleClick={(e) => {
+              dispatch(addToCart(id));
+            }}
           />
           {eyeIcon}
         </div>
