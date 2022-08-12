@@ -3,7 +3,7 @@ import axios from "axios";
 
 const initialState = {
   favorites: [],
-  cart: [],
+  cart: {},
   products: [],
   productsIsLoading: null,
   errorLoading: null,
@@ -23,10 +23,16 @@ const productsSlice = createSlice({
   initialState,
   reducers: {
     addToFavorites: (state, action) => {
-      state.favorites.push(action.payload);
+      if (state.favorites.indexOf(action.payload) === -1) {
+        state.favorites.push(action.payload);
+      }
     },
     addToCart: (state, action) => {
-      state.cart.push(action.payload);
+      if (typeof  state.cart[action.payload] === "undefined" ) {
+        state.cart[action.payload] = 1;
+      } else {
+        state.cart[action.payload] = state.cart[action.payload] + 1;
+      }
     },
     setProducts: (state, action) => {
       state.products = action.payload;

@@ -1,0 +1,24 @@
+.cart__wrapper {
+  padding: 30px;
+}
+
+.cart__header {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.cart__content {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-template-rows: 1fr;
+}
+
+.cart__cards__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  gap: 100px 30px;
+}
