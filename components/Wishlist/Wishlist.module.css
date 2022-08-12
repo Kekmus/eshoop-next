@@ -1,0 +1,19 @@
+.wishlist__wrapper {
+  padding: 30px;
+}
+
+.wishlist__cards__wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  gap: 100px 30px;
+  margin: 30px 0;
+}
+
+.wishlist__header {
+  font-size: 36px;
+  font-weight: bold;
+}
