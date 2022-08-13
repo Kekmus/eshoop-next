@@ -12,10 +12,10 @@ const ProductCard = ({ category, name, price, image, rating, id }) => {
 
   const stars = [];
   for (let i = 0; i < Math.round(rating); i++) {
-    stars.push(<AiFillStar className={style.star__icon} />);
+    stars.push(<AiFillStar className={style.star__icon} key={i}/>);
   }
-  for (let i = 0; i < 5 - Math.round(rating); i++) {
-    stars.push(<AiOutlineStar className={style.star__icon} />);
+  for (let i = 5; i > Math.round(rating); i--) {
+    stars.push(<AiOutlineStar className={style.star__icon} key={i}/>);
   }
 
   return (

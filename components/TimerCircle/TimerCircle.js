@@ -7,10 +7,12 @@ const TimerCircle = ({number, text}) => {
       top = {0}
       left = {0}
       size = {100}
-      inner = {[
-        <strong>{number}</strong>,
-        <div>{text}</div>
-      ]}
+      inner = {
+        <>
+          <strong>{number}</strong>
+          <div>{text}</div>
+        </>
+      }
     />
   )
 }
