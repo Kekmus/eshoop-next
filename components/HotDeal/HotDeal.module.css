@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--light-grey-color);
+  background-color: transparent;
 }
 
 .hotDeal__content__wrapper {
@@ -28,7 +28,7 @@
 }
 
 .bgWrap {
-  position: fixed;
+  position: absolute;
   height: 430px;
   width: 100%;
   overflow: hidden;

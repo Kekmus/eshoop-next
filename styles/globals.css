@@ -46,3 +46,7 @@ button {
   border: none;
   cursor: pointer;
 }
+
+textarea:focus, input:focus{
+  outline: none;
+}
