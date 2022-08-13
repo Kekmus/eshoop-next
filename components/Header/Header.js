@@ -2,9 +2,7 @@ import style from "./Header.module.css";
 import MyInput from "../MyInput/MyInput";
 import Circle from "../Circle/Circle";
 import DropdownToggle from "../DropdownToggle/DropdownToggle";
-import { AiOutlineShoppingCart } from "react-icons/ai";
-import { IconContext } from "react-icons";
-import { MdFavoriteBorder } from "react-icons/md";
+import { MdFavoriteBorder, MdOutlineShoppingCart } from "react-icons/md";
 import { useSelector, useDispatch } from "react-redux";
 import { setSearchQuery } from "../../features/productsSlice";
 import Link from "next/link";
@@ -18,15 +16,11 @@ const Header = () => {
   const dispatch = useDispatch();
 
   const cartIcon = (
-    <IconContext.Provider value={{ color: "white", size: "20px" }}>
-      <AiOutlineShoppingCart />
-    </IconContext.Provider>
+    <MdOutlineShoppingCart className={style.header__icon}/>
   );
 
   const favoriteIcon = (
-    <IconContext.Provider value={{ color: "white", size: "20px" }}>
-      <MdFavoriteBorder />
-    </IconContext.Provider>
+    <MdFavoriteBorder className={style.header__icon}/>
   );
 
   return (
@@ -46,7 +40,7 @@ const Header = () => {
         />
         <div className={style.dropdownToggle__wrapper}>
           <Link href="/wishlist">
-            <a>
+            <a className={style.header__link}>
               <DropdownToggle
                 text={"Your Wishlist"}
                 inner={favoritesLength}
@@ -55,7 +49,7 @@ const Header = () => {
             </a>
           </Link>
           <Link href="/cart">
-            <a>
+            <a className={style.header__link}>
               <DropdownToggle
                 text={"Your Cart"}
                 inner={cartLength}

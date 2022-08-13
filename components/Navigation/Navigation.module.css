@@ -7,8 +7,16 @@
 
 .navigation__link {
   color: var(--text-color);
+  transition: all 0.3s linear;
 }
 
 .navigation__active {
   color: var(--accent-color);
+}
+
+@media (any-hover: hover) {
+  .navigation__link:hover {
+    color: var(--accent-color);
+    transition: all 0.1s linear;
+  }
 }

@@ -39,6 +39,16 @@
   align-items: flex-start;
 }
 
-.icon {
-  cursor: pointer
+.cross__icon {
+  font-size: 30px;
+  fill: var(--dark-color);
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+
+@media (any-hover: hover) {
+  .cross__icon:hover {
+    fill: var(--accent-color);
+    transition: all 0.1s linear;
+  }
 }

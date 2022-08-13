@@ -21,3 +21,18 @@
   display: flex;
 }
 
+.header__icon {
+  font-size: 25px;
+  fill: var(--white-color);
+}
+
+.header__link:hover {
+  transition: all 0.3s linear;
+}
+
+@media (any-hover: hover) {
+  .header__link:hover {
+    transform: scale(1.2);
+    transition: all 0.1s linear;
+  }
+}

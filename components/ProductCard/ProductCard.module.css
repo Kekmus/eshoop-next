@@ -83,6 +83,11 @@
   cursor: pointer;
 }
 
+.star__icon {
+  font-size: 15px;
+  fill: var(--accent-color);
+}
+
 @media (any-hover: hover) {
   .productCard__wrapper:hover {
     border-color: var(--accent-color);

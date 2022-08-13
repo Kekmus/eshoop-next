@@ -1,12 +1,9 @@
 import style from "./CartProductCard.module.css";
 import Image from "next/image";
-import { IconContext } from "react-icons";
-import { MdFavoriteBorder, MdFavorite } from "react-icons/md";
-import { GrClose } from "react-icons/gr";
+import { MdClear } from "react-icons/md";
 import Counter from "../Counter/Counter";
 import { useDispatch } from "react-redux";
 import {
-  addToFavorites,
   reduceCountProductInCart,
   addToCart,
   delFromCart,
@@ -15,17 +12,6 @@ import FavoriteIcon from "../FavoriteIcon/FavoriteIcon";
 
 const CartProductCard = ({ category, name, price, image, id, count }) => {
   const dispatch = useDispatch();
-
-  const crossIcon = (
-    <IconContext.Provider value={{ color: "#15161D", size: "30px" }}>
-      <GrClose
-        className={style.icon}
-        onClick={(e) => {
-          dispatch(delFromCart(id));
-        }}
-      />
-    </IconContext.Provider>
-  );
 
   return (
     <div className={style.productCard__wrapper}>
@@ -46,10 +32,13 @@ const CartProductCard = ({ category, name, price, image, id, count }) => {
             <p className={style.product__category}>{category}</p>
           </div>
           <div className={style.card__icons__wrapper}>
-            <FavoriteIcon
-              id={id}
+            <FavoriteIcon id={id} />
+            <MdClear
+              className={style.cross__icon}
+              onClick={(e) => {
+                dispatch(delFromCart(id));
+              }}
             />
-            {crossIcon}
           </div>
         </div>
         <div className={style.productCard__price__section}>
