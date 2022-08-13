@@ -1,0 +1,25 @@
+.active__icon {
+  font-size: 30px;
+  fill: var(--accent-color);
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+
+.unactive__icon {
+  font-size: 30px;
+  cursor: pointer;
+  fill: var(--dark-color);
+  transition: all 0.3s linear;
+}
+
+@media (any-hover: hover) {
+  .active__icon:hover {
+    fill: var(--dark-color);
+    transition: all 0.1s linear;
+  }
+
+  .unactive__icon:hover {
+    fill: var(--accent-color);
+    transition: all 0.1s linear;
+  }
+}

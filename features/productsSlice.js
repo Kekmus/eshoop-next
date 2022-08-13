@@ -27,6 +27,12 @@ const productsSlice = createSlice({
         state.favorites.push(action.payload);
       }
     },
+    delFromFavorites: (state, action) => {
+      console.log('dell')
+      if (state.favorites.indexOf(action.payload) !== -1) {
+        state.favorites = state.favorites.filter((a) => a !== action.payload);
+      }
+    },
     addToCart: (state, action) => {
       if (typeof  state.cart[action.payload] === "undefined" ) {
         state.cart[action.payload] = 1;
@@ -69,6 +75,6 @@ const productsSlice = createSlice({
   },
 });
 
-export const { delFromCart, addToFavorites, addToCart, setProducts, setSearchQuery, reduceCountProductInCart } =
+export const { delFromFavorites, delFromCart, addToFavorites, addToCart, setProducts, setSearchQuery, reduceCountProductInCart } =
   productsSlice.actions;
 export default productsSlice.reducer;

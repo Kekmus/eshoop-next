@@ -5,8 +5,9 @@ import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import { IconContext } from "react-icons";
 import { MdFavoriteBorder } from "react-icons/md";
 import { FaEye } from "react-icons/fa";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToFavorites, addToCart } from "../../features/productsSlice";
+import FavoriteIcon from "../FavoriteIcon/FavoriteIcon";
 
 const ProductCard = ({ category, name, price, image, rating, id }) => {
   const dispatch = useDispatch();
@@ -28,17 +29,15 @@ const ProductCard = ({ category, name, price, image, rating, id }) => {
       <FaEye className={style.icon} />
     </IconContext.Provider>
   );
-
-  const favoriteIcon = (
-    <IconContext.Provider value={{ color: "#15161D", size: "30px" }}>
-      <MdFavoriteBorder
-        className={style.icon}
-        onClick={(e) => {
-          dispatch(addToFavorites(id));
-        }}
-      />
-    </IconContext.Provider>
-  );
+  //   <IconContext.Provider value={{ color: "#15161D", size: "30px" }}>
+  //     <MdFavoriteBorder
+  //       className={style.icon}
+  //       onClick={(e) => {
+  //         dispatch(addToFavorites(id));
+  //       }}
+  //     />
+  //   </IconContext.Provider>
+  // );
 
   const stars = [];
   for (let i = 0; i < Math.round(rating); i++) {
@@ -66,7 +65,9 @@ const ProductCard = ({ category, name, price, image, rating, id }) => {
         <h4 className={style.product__price}>${price}</h4>
         <div className={style.product__rating}>{stars}</div>
         <div className={style.card__icons__wrapper}>
-          {favoriteIcon}
+          <FavoriteIcon
+            id={id}
+          />
           <MyButton
             text="Add To Card"
             handleClick={(e) => {
