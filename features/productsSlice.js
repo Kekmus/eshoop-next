@@ -34,6 +34,19 @@ const productsSlice = createSlice({
         state.cart[action.payload] = state.cart[action.payload] + 1;
       }
     },
+    delFromCart: (state, action) => {
+      if (typeof  state.cart[action.payload] !== "undefined" ) {
+        state.cart[action.payload] = undefined
+      }
+    },
+    reduceCountProductInCart: (state, action) => {
+      if (typeof  state.cart[action.payload] !== "undefined" ) {
+        state.cart[action.payload] = state.cart[action.payload] - 1;
+        if (state.cart[action.payload] === 0) {
+          state.cart[action.payload] = undefined
+        }
+      }
+    },
     setProducts: (state, action) => {
       state.products = action.payload;
     },
@@ -56,6 +69,6 @@ const productsSlice = createSlice({
   },
 });
 
-export const { addToFavorites, addToCart, setProducts, setSearchQuery } =
+export const { delFromCart, addToFavorites, addToCart, setProducts, setSearchQuery, reduceCountProductInCart } =
   productsSlice.actions;
 export default productsSlice.reducer;

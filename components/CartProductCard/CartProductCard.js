@@ -2,13 +2,22 @@ import style from "./CartProductCard.module.css";
 import Image from "next/image";
 import { IconContext } from "react-icons";
 import { MdFavoriteBorder } from "react-icons/md";
-import { FaEye } from "react-icons/fa";
+import { GrClose } from "react-icons/gr";
 import Counter from "../Counter/Counter"
+import { useDispatch } from "react-redux";
+import { addToFavorites, reduceCountProductInCart, addToCart, delFromCart } from "../../features/productsSlice";
 
-const CartProductCard = ({ category, name, price, image, rating, id }) => {
+const CartProductCard = ({ category, name, price, image, id, count }) => {
+  const dispatch = useDispatch()
+
   const eyeIcon = (
     <IconContext.Provider value={{ color: "#15161D", size: "30px" }}>
-      <FaEye className={style.icon} />
+      <GrClose
+        className={style.icon}
+        onClick={(e) => {
+          dispatch(delFromCart(id));
+        }}
+      />
     </IconContext.Provider>
   );
 
@@ -48,7 +57,15 @@ const CartProductCard = ({ category, name, price, image, rating, id }) => {
         </div>
         <div className={style.productCard__price__section}>
           <h4 className={style.product__price}>${price}</h4>
-          <Counter value={1}/>
+          <Counter
+            value={count}
+            handleMinus={(e) => {
+              dispatch(reduceCountProductInCart(id));
+            }}
+            handlePlus={(e) => {
+              dispatch(addToCart(id));
+            }}
+          />
         </div>
       </div>
     </div>

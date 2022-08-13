@@ -1,0 +1,40 @@
+.totalCartAmount__wrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 20px;
+  padding: 20px;
+  border: 2px solid var(--accent-color);
+  border-radius: 5px;
+}
+
+.countProducts__section {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.totalAmount_section {
+  width: 100%;
+  font-weight: bold;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+.totalAmount__button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  align-content: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
