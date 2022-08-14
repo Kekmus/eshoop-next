@@ -12,9 +12,6 @@ const TotalCartAmount = ({ totalAmount, totalCount }) => {
       <div className={style.totalAmount__button}>
         <MyButton
           text="take delivery"
-          handleClick={(e) => {
-            console.log(12345678);
-          }}
         />
       </div>
     </div>

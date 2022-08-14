@@ -12,6 +12,7 @@
   text-transform: uppercase;
   font-weight: 700;
   text-align: center;
+  user-select: none;
 }
 
 .counter__minus {

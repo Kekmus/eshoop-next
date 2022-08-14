@@ -28,7 +28,6 @@ const productsSlice = createSlice({
       }
     },
     delFromFavorites: (state, action) => {
-      console.log('dell')
       if (state.favorites.indexOf(action.payload) !== -1) {
         state.favorites = state.favorites.filter((a) => a !== action.payload);
       }
@@ -42,14 +41,14 @@ const productsSlice = createSlice({
     },
     delFromCart: (state, action) => {
       if (typeof  state.cart[action.payload] !== "undefined" ) {
-        state.cart[action.payload] = undefined
+        delete state.cart[action.payload]
       }
     },
     reduceCountProductInCart: (state, action) => {
       if (typeof  state.cart[action.payload] !== "undefined" ) {
         state.cart[action.payload] = state.cart[action.payload] - 1;
         if (state.cart[action.payload] === 0) {
-          state.cart[action.payload] = undefined
+          delete state.cart[action.payload]
         }
       }
     },

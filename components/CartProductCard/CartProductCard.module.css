@@ -39,6 +39,15 @@
   align-items: flex-start;
 }
 
+.product__totalPrice {
+  font-size: larger;
+  font-weight: bold
+}
+
+.product__price {
+  color: var(--text-color)
+}
+
 .cross__icon {
   font-size: 30px;
   fill: var(--dark-color);

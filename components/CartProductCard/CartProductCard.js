@@ -42,7 +42,10 @@ const CartProductCard = ({ category, name, price, image, id, count }) => {
           </div>
         </div>
         <div className={style.productCard__price__section}>
-          <h4 className={style.product__price}>${price}</h4>
+          <div className={style.onlyPrice__section}>
+            <p className={style.product__totalPrice}>${price * count}</p>
+            <p className={style.product__price}>${price}/per one item</p>
+          </div>
           <Counter
             value={count}
             handleMinus={(e) => {
