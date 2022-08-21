@@ -7,9 +7,6 @@ const Home = () => {
 
   return (
     <>
-      <Navigation
-        currentPage={'home'}
-      />
       <ProductsSection />
       <HotDeal />
       <Newsletter />

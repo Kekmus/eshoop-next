@@ -6,9 +6,6 @@ import Wishlist from "../../components/Wishlist/Wishlist";
 const WishlistPage = () => {
   return (
     <>
-      <Navigation
-        currentPage={''}
-      />
       <Wishlist />
     </>
   );

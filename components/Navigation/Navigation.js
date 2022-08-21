@@ -9,7 +9,7 @@ const Navigation = ({ currentPage }) => {
         <Link href="/">
           <a
             className={
-              currentPage === "home"
+              currentPage === ""
                 ? style.navigation__active
                 : style.navigation__link
             }

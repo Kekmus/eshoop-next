@@ -6,9 +6,6 @@ import ProductsSection from "../../components/ProductsSection/ProductsSection";
 const Electronics = () => {
   return (
     <>
-      <Navigation
-        currentPage={'electronics'}
-      />
       <ProductsSection />
       <HotDeal />
       <Newsletter />
