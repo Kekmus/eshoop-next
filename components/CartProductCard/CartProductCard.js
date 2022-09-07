@@ -43,7 +43,7 @@ const CartProductCard = ({ category, name, price, image, id, count }) => {
         </div>
         <div className={style.productCard__price__section}>
           <div className={style.onlyPrice__section}>
-            <p className={style.product__totalPrice}>${price * count}</p>
+            <p className={style.product__totalPrice}>${(price * count).toFixed(1)}</p>
             <p className={style.product__price}>${price}/per one item</p>
           </div>
           <Counter

@@ -40,7 +40,7 @@ const ProductCard = ({ category, name, price, image, rating, id }) => {
             id={id}
           />
           <MyButton
-            text="Add To Card"
+            text="Add To Cart"
             handleClick={(e) => {
               dispatch(addToCart(id));
             }}
