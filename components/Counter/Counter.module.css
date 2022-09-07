@@ -18,11 +18,17 @@
 .counter__minus {
   padding: 10px;
   cursor: pointer;
+  background-color: var(--light-grey-color);
+  border-radius: 40px;
+  margin: 5px;
 }
 
 .counter__plus {
   padding: 10px;
   cursor: pointer;
+  background-color: var(--light-grey-color);
+  border-radius: 40px;
+  margin: 5px;
 }
 
 .counter__value {

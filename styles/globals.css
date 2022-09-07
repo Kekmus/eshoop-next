@@ -45,6 +45,7 @@ a {
 button {
   border: none;
   cursor: pointer;
+  background-color: var(--white-color);
 }
 
 textarea:focus, input:focus{

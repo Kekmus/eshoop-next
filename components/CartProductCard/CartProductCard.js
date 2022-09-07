@@ -33,12 +33,14 @@ const CartProductCard = ({ category, name, price, image, id, count }) => {
           </div>
           <div className={style.card__icons__wrapper}>
             <FavoriteIcon id={id} />
-            <MdClear
-              className={style.cross__icon}
-              onClick={(e) => {
-                dispatch(delFromCart(id));
-              }}
-            />
+            <button>
+              <MdClear
+                className={style.cross__icon}
+                onClick={(e) => {
+                  dispatch(delFromCart(id));
+                }}
+              />
+            </button>
           </div>
         </div>
         <div className={style.productCard__price__section}>

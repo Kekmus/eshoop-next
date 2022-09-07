@@ -9,7 +9,7 @@ const FavoriteIcon = ({ id }) => {
   const active = favorites.indexOf(id) != -1
 
   return (
-    <>
+    <button>
       {active ? (
         <MdFavorite
           className={style.active__icon}
@@ -25,7 +25,7 @@ const FavoriteIcon = ({ id }) => {
           }}
         />
       )}
-    </>
+    </button>
   );
 };
 
